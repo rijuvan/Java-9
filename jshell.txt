@@ -1,64 +1,57 @@
 Snippets of Java code: variable
-String foo = "How"
-
+String message = "How"
 Snippets of Java code: method
-long fibonacci(long n) {
- if (n == 0) return 0;
-if (n == 1) return 1;
- return fibonacci(n - 1) + fibonacci(n - 2);
- }
-
+jshell> public void show()
+   ...> {
+   ...> System.out.println("This is demo method defined in shell!!");
+   ...> }
+|  
+created method show()
  Snippets of Java code: class, interface, enum, or annotation interface
- interface Defloat {
->> int convert(float x);
->> }
-
-Snippets of Java code: expression
-fibonacci(10)
-
+  jshell> class Test{
+   ...> public void show()
+   ...> {
+   ...> System.out.println("This is show method of Test class");
+   ...> }
+   ...> }
+|  created class Test
+jshell> Test t1=new Test();
+t1 ==> Test@527740a2
+jshell> t1.show();
+This is show method of Test class
 Snippets of Java code: statement
-
 if ($4 > 20) printf("The value is %s\n", $4)
-
 Snippets of Java code: import declaration
-
 > import javax.swing.*
-
-
+Creating Java Oracle Connection :
+import oracle.jdbc.driver.OracleDriver;
+Class.forName("oracle.jdbc.driver.OracleDriver");
+String url="jdbc:oracle:thin:@127.0.0.1:1521:XE";
+Statement stmt=con.createStatement();
+ResultSet result=stmt.executeQuery("Select * from employees");
+ while(result.next()){
+ System.out.println(result.getString(2));
+ }
+  /reload 
 *****************8 Jshell Command *******************
-
 JShell Command: /help
-
 JShell Command: /list
 JShell Commands: /vars, /methods, /classes
-
 JShell Commands: /save, /open
-
 -> /save mycode.jsh
 -> /exit
-
 -> /open mycode.jsh
 The value is 55
 -> /list
-
 Start-up File
-
 /list -all
-
 /list -start
-
 /drop 2
 | dropped variable a
-
 /set editor "vi"
-
-
-Create the sample.startup file with the following content:
-void println(String message) { System.out.println(message); }
-Starting up a new jshell and executing it is done as follows:
-jshell> /set start sample.startup
+/edit
+Stop and re open 
+/edit
 jshell> /reset
 | Resetting state.
-
-
 / history

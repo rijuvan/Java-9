@@ -1,0 +1,64 @@
+Snippets of Java code: variable
+String foo = "How"
+
+Snippets of Java code: method
+long fibonacci(long n) {
+ if (n == 0) return 0;
+if (n == 1) return 1;
+ return fibonacci(n - 1) + fibonacci(n - 2);
+ }
+
+ Snippets of Java code: class, interface, enum, or annotation interface
+ interface Defloat {
+>> int convert(float x);
+>> }
+
+Snippets of Java code: expression
+fibonacci(10)
+
+Snippets of Java code: statement
+
+if ($4 > 20) printf("The value is %s\n", $4)
+
+Snippets of Java code: import declaration
+
+> import javax.swing.*
+
+
+*****************8 Jshell Command *******************
+
+JShell Command: /help
+
+JShell Command: /list
+JShell Commands: /vars, /methods, /classes
+
+JShell Commands: /save, /open
+
+-> /save mycode.jsh
+-> /exit
+
+-> /open mycode.jsh
+The value is 55
+-> /list
+
+Start-up File
+
+/list -all
+
+/list -start
+
+/drop 2
+| dropped variable a
+
+/set editor "vi"
+
+
+Create the sample.startup file with the following content:
+void println(String message) { System.out.println(message); }
+Starting up a new jshell and executing it is done as follows:
+jshell> /set start sample.startup
+jshell> /reset
+| Resetting state.
+
+
+/ history
